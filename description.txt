@@ -1,0 +1,7 @@
+#sql commands for creating database
+
+CREATE DATABASE POI;
+use POI;
+
+
+#created random data from https://mockaroo.com
