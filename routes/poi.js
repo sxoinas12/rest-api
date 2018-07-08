@@ -3,8 +3,6 @@ const Router = require('koa-router');
 const router = new Router();
 const knex = require('../models/database');
 
-const p = new GeoPoint(16.56,43.52);
-
 const tools = require('../helpers/tools');
 
 
