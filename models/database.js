@@ -10,17 +10,6 @@ const mysql = require('knex')({
   }
 });
 
-/*/
-const mysql = require('knex')({
-  "client": "mysql",
-  "connection": {
-    "host": "localhost",
-    "port": 32770,
-    "user": "root",
-    "password": "development",
-    "database": "tonersales"
-  }
-});
-//*/
+
 
 module.exports = mysql;

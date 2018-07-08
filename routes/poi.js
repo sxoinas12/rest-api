@@ -8,8 +8,7 @@ const p = new GeoPoint(16.56,43.52);
 const tools = require('../helpers/tools');
 
 
-//request --> localhost:3000/poi/45&65
-//localhost:3000/poi/-9.724&124.27
+//request --> localhost:3000/poi/-9.724&124.27
 router.get('/poi/:lat&:lon', (ctx,next) => {
 
   let userCoord = {
