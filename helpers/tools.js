@@ -1,44 +1,19 @@
 const GeoPoint = require('geopoint')
-/*
-module.exports =function(data,box) {
- 
- let j = 0;
- var array = []
- let b1 = new GeoPoint(box[0]._degLat,box[0]._degLon);
- let b2 = new GeoPoint(box[1]._degLat,box[1]._degLon);
-
- for(i=0; i<=data.length; i++){
- 	
- 	let p = new GeoPoint(parseFloat(data[i].lat),parseFloat(data[i].lon));
- 	if(p._degLat >= b1._degLat && p._degLat <= b2._degLat && p._degLon>= b1._degLon && p._degLon <= b2._degLon ){
- 		console.log(p)
- 		array[j] = p;
-
- 		j++;
- 	}
-
-
- }
-
- return array;
-}
-*/
-
-
 
 
 module.exports = function(data,userPoint){
 	return new Promise(function(resolve,reject){
 		var j = 0;
 		var array = [];
-		
+		let max_range = 50;
 		if(true){
 
 		for(i=0; i<data.length; i++){
 		 	let p = new GeoPoint(parseFloat(data[i].lat),parseFloat(data[i].lon));
 		 	let id = data[i].id;
-		 	//console.log(p);
-			if(userPoint.distanceTo(p,true) < 50) {
+		 	//50 is the max range i wanna search
+		 	
+			if(userPoint.distanceTo(p,true) < max_range) {
 				array[j] = id;
 				j = j+1;
 				
@@ -55,8 +30,6 @@ module.exports = function(data,userPoint){
 		
 		
 	}).then(function(res){
-		//console.log(res);
-		
 		return res;
 	}).catch(function(err){
 		console.log(err.message);
